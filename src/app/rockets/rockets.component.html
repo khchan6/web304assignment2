@@ -1,0 +1,15 @@
+<mat-card *ngFor="let rocket of rockets" class=small-card>
+    <mat-card-header>
+        <mat-card-title>{{rocket.rocket_name}}</mat-card-title>
+        <!-- <a [routerLink]="['/rocket', rocket.rocket_id]" >{{rocket.rocket_id}}</a> -->
+        <!-- <a [routerLink]="['/rocket', rocket.rocket_id]" mat-card-subtitle >{{rocket.rocket_id}}</mat-card-subtitle> -->
+        <!-- <mat-card-subtitle >Rocket id: {{rocket.rocket_id}}</mat-card-subtitle>  -->
+        <mat-card-subtitle >Description: {{rocket.description}}</mat-card-subtitle>
+    </mat-card-header>     
+    <img mat-card-image src={{rocket.flickr_images}} alt="Photo of the rocket">   
+    <!-- <mat-card-content class=cardleft>
+    </mat-card-content>         -->
+    <mat-card-actions>
+        <button [routerLink]="['/rocket', rocket.rocket_id]">More detail</button>    
+    </mat-card-actions>        
+</mat-card>

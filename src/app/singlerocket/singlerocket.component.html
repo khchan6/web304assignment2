@@ -1,0 +1,18 @@
+<div *ngIf="rocket">
+
+    <mat-card class=small-card>
+        <mat-card-header>
+            <mat-card-title>{{rocket.rocket_name}}</mat-card-title>
+            <mat-card-subtitle>{{rocket.description}}</mat-card-subtitle>
+        </mat-card-header>     
+        <img mat-card-image src={{rocket.flickr_images}} alt="Photo of the rocket">   
+        <mat-card-content class=cardleft>
+            <p>First flight: {{ rocket.first_flight }} </p>
+            <p>Country: {{ rocket.country }}</p>
+            <p>Height(m): {{ rocket.height.meters }}</p>
+            <p>Diameter(m): {{ rocket.diameter.meters }} </p>
+            <p>Mass(kg): {{ rocket.mass.kg }}</p>
+
+        </mat-card-content>        
+    </mat-card>
+</div>
