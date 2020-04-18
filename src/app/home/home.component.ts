@@ -16,8 +16,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.spacexService.getHistory().subscribe(response => {
-      console.log(response);
+      // console.log(response);
+    setTimeout(() => {  
       this.info = response;    
+    }, 1000);
   })}
 
 }

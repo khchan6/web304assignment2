@@ -12,20 +12,20 @@ export class AboutComponent implements OnInit {
     private spacexService: SpacexService
    ) {}
 
-  company;
+ company;
   rocket;
    
 
   ngOnInit(): void {
     this.spacexService.getInfo().subscribe(response => 
     {
-        console.log(response);
+      setTimeout(() => {
         this.company = response;    
+      }, 1000);
     });
 
     this.spacexService.getSingleRocket("starship").subscribe(response2 => 
     {
-      console.log(response2);
       this.rocket = response2;
     });
 

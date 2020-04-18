@@ -1,4 +1,4 @@
-<div *ngIf="rocket">
+<div *ngIf="rocket; else showLoading" class="container">
 
     <mat-card class=small-card>
         <mat-card-header>
@@ -16,3 +16,9 @@
         </mat-card-content>        
     </mat-card>
 </div>
+
+<ng-template #showLoading>
+    <div class="loadingSpinner">
+      <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+    </div>
+</ng-template>

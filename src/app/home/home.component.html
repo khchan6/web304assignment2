@@ -1,12 +1,21 @@
-<h2 class=cardleft>SpaceX history</h2>
 
-<mat-card *ngFor="let inf of info">
-    <mat-card-header>
-        <mat-card-title>{{inf.title}}</mat-card-title>
-        <mat-card-subtitle>Flight number: {{inf.flight_number}}</mat-card-subtitle>
-    </mat-card-header>        
-    <mat-card-content class=cardleft>
-        <p>{{inf.details}}</p>
-    </mat-card-content>        
-</mat-card>
+<div *ngIf="info; else showLoading">
+    <h2 class=cardleft>SpaceX history</h2>
+    <mat-card *ngFor="let inf of info" >
+        <mat-card-header >
+            <mat-card-title>{{inf.title}}</mat-card-title>
+            <mat-card-subtitle>Flight number: {{inf.flight_number}}</mat-card-subtitle>
+        </mat-card-header>        
+        <mat-card-content class=cardleft>
+            <p>{{inf.details}}</p>
+        </mat-card-content>        
+    </mat-card>
+</div>
+<!-- <mat-spinner mode="ProgressSpinnerMode"></mat-spinner>  -->
 
+<ng-template #showLoading>
+    <div class="loadingSpinner">
+      <!-- <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner> -->
+       <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> 
+    </div>
+</ng-template>

@@ -22,10 +22,12 @@ export class SinglerocketComponent implements OnInit {
       console.log(params);
       const rocket_id = params.rocket_id;
 
-      // pass the flightNumber as a parameter to getSingleLaunch, to make single launch API calls
       this.spacexService.getSingleRocket(rocket_id).subscribe(response => {
-        console.log(response);
-        this.rocket = response;
+
+        setTimeout(() => {
+          console.log(response);
+          this.rocket = response;
+        }, 1000);
       })
     });
   }

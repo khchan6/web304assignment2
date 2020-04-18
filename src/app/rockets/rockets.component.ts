@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import { SpacexService } from '../spacex.service';
 
 @Component({
@@ -8,6 +10,9 @@ import { SpacexService } from '../spacex.service';
 })
 export class RocketsComponent implements OnInit {
 
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  
   constructor(
     private spacexService: SpacexService
    ) {}
@@ -16,8 +21,9 @@ export class RocketsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spacexService.getRockets().subscribe(response => {
-      console.log(response);
-      this.rockets = response;    
+      setTimeout(() => {
+        this.rockets = response;    
+      }, 1000);
   })}
 
 }
